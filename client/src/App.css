@@ -26,3 +26,11 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.Navbar {
+  font-family: 'News Cycle', sans-serif;
+}
+
+#navbrand {
+  font-size: 35px;
+}
