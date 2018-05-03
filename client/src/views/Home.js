@@ -1,16 +1,11 @@
 import React, {Component} from "react"
-var sectionStyle = {
-  width: "100%",
-  height: "500px",
-  backgroundImage: `url(https://i.imgur.com/xVpI0.jpg)`
-};
 
 class Home extends Component{
 
   render(){
     return(
-      <div style={ sectionStyle } className="Home">
-
+      <div className="Home">
+        <img src="http://www.compressiondesign.com/wp-content/uploads/2017/10/5-yoga-poses-that-will-help-you-unwind.jpg"/>
       </div>
     )
   }

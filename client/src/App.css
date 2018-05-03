@@ -34,3 +34,8 @@
 #navbrand {
   font-size: 35px;
 }
+
+.Navbar{
+  position:fixed;
+  width: 100%;
+}
