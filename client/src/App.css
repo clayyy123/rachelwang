@@ -27,8 +27,9 @@
   to { transform: rotate(360deg); }
 }
 
-.Navbar {
+.Navbar, .Classes {
   font-family: 'News Cycle', sans-serif;
+  
 }
 
 #navbrand {
@@ -38,4 +39,26 @@
 .Navbar{
   position:fixed;
   width: 100%;
+  
+}
+
+.nav{
+  margin-right: 50px;
+}
+
+#opener{
+  width:100%;
+}
+
+#class{
+  margin-top:20px;
+}
+
+#class-body{
+  margin-top: 20px;
+}
+
+#about-me{
+  width:300px;
+  z-index: -20;
 }
