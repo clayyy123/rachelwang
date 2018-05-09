@@ -39,7 +39,7 @@
 .Navbar{
   position:fixed;
   width: 100%;
-  
+  z-index:5;
 }
 
 .nav{
@@ -58,7 +58,18 @@
   margin-top: 20px;
 }
 
-#about-me{
-  width:300px;
-  z-index: -20;
+#about-me, .gallery{
+  max-height:200px;
+  max-width:200;
+  height:auto;
+  width:auto;
+  z-index: 1;
+}
+
+.border{
+  max-height:200px;
+  max-width:200;
+  height:auto;
+  width:auto;
+  display:inline-block;
 }
