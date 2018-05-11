@@ -14,20 +14,22 @@ import { Card, CardImg, CardText, CardBody,
 function importAll(r) {
   return r.keys().map(r);
 }
-const yogaGal = importAll(require.context('../Yoga', false, /\.(png|jpe?g|svg)$/));
+const square = importAll(require.context('../square', false, /\.(png|jpe?g|svg)$/));
+const horizontal = importAll(require.context('../horizontal', false, /\.(png|jpe?g|svg)$/));
+const vertical = importAll(require.context('../vertical', false, /\.(png|jpe?g|svg)$/));
 const items = [
   {
-    src: yogaGal.slice(0,10),
+    src: square,
     altText: 'Slide 1',
     caption: 'Slide 1'
   },
   {
-    src: yogaGal.slice(10,19),
+    src: horizontal,
     altText: 'Slide 2',
     caption: 'Slide 2'
   },
   {
-    src:yogaGal.slice(19,28),
+    src:vertical,
     altText: 'Slide 3',
     caption: 'Slide 3'
   }
@@ -104,7 +106,7 @@ class Gallery extends Component{
     });
 
     return (
-      <div>
+      <div className="Gallery">
         <h1> Gallery </h1>
         <Carousel
           activeIndex={activeIndex}

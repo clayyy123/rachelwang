@@ -80,7 +80,7 @@
   width: 50px;
   font-size: 25px;
   list-style: none;
-  color: #0060B6;
+  color: black;
 }
 
 li:hover {
@@ -102,5 +102,9 @@ li:hover {
 
 .image-holder:hover .overlay{
   opacity:.3;
+}
+
+.Gallery{
+  height: 100vh;
 }
 
