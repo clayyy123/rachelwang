@@ -58,18 +58,12 @@
   margin-top: 20px;
 }
 
-#about-me, .gallery{
+#about-me, .gallery, .border{
   max-height:200px;
-  max-width:200;
+  max-width:200px;
   height:auto;
   width:auto;
   z-index: 1;
+  margin-top:25px;
 }
 
-.border{
-  max-height:200px;
-  max-width:200;
-  height:auto;
-  width:auto;
-  display:inline-block;
-}
