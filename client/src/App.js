@@ -6,6 +6,7 @@ import Home from "./views/Home"
 import Classes from "./views/Classes"
 import About from "./views/About"
 import Gallery from "./views/Gallery"
+import End from "./views/Footer"
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
         <Classes />
         <About />
         <Gallery />
+        <End />
       </div>
     );
   }

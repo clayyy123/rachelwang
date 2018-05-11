@@ -67,3 +67,40 @@
   margin-top:25px;
 }
 
+.gallery:hover{
+  
+}
+
+.Footer{
+  height:200px;
+  background-color: grey;
+}
+
+.fab {
+  width: 50px;
+  font-size: 25px;
+  list-style: none;
+  color: #0060B6;
+}
+
+li:hover {
+  color:#00A0C6; 
+}
+
+.overlay{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+}
+
+.image-holder:hover .overlay{
+  opacity:.3;
+}
+

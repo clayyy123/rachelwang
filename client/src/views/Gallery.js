@@ -90,7 +90,11 @@ class Gallery extends Component{
           {item.src.map((image) =>{
           return (
             <Col xs="2">
-              <img className="gallery" src={image} />
+              <div className="image-holder">
+                <img className="gallery" src={image} />
+                <div className="overlay">
+                </div>
+              </div>
             </Col>
           )
           })}
