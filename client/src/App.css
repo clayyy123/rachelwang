@@ -58,7 +58,7 @@
   margin-top: 20px;
 }
 
-#about-me, .gallery, .border{
+#about-me, .gallery, .image-holder{
   max-height:200px;
   max-width:200px;
   height:auto;
@@ -67,9 +67,10 @@
   margin-top:25px;
 }
 
-.gallery:hover{
-  
+.image-holder{
+ position:relative;
 }
+
 
 .Footer{
   height:200px;

@@ -18,7 +18,7 @@ class App extends Component {
         <Classes />
         <About />
         <Gallery />
-        <End />
+
       </div>
     );
   }
