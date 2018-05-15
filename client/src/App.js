@@ -20,6 +20,7 @@ import Classes from "./views/Classes"
 import About from "./views/About"
 import Gallery from "./views/Gallery"
 import End from "./views/Footer"
+import Contact from "./views/Contact"
 
 class App extends Component {
 
@@ -57,7 +58,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
+      <div className="para"></div>
       <div className="Navbar">
         <Navbar color="dark" dark expand="md">
           <NavbarBrand id="navbrand" href="/">Rachel Wang</NavbarBrand>
@@ -77,21 +78,23 @@ class App extends Component {
                 <Link activeClass="active" className="nav" to="gallery" spy={true} smooth={true} duration={500} ><NavLink href="#">Gallery</NavLink></Link>
               </NavItem>
               <NavItem>
-                <NavLink className="nav" href="#">Contact</NavLink>
+                <Link activeClass="active" className="nav" to="contact" spy={true} smooth={true} duration={500} ><NavLink href="#">Contact</NavLink></Link>
               </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
+  
       </div>
         
         <Element name="home"><Home /></Element>
-       
+
         <Element name="about"><About /></Element>
        
         <Element name="classes"><Classes /></Element>
        
         <Element name="gallery"><Gallery /></Element>
         
+        <Element name="contact"><Contact /></Element>
         <footer>
           <End />
         </footer>
