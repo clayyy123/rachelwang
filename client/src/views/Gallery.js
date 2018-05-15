@@ -16,7 +16,7 @@ class Gallery extends Component{
 
   render() {
     var settings = {
-      dots: true,
+      dots: false,
       infinite: false,
       speed: 500,
       slidesToShow: 4,
@@ -54,6 +54,9 @@ class Gallery extends Component{
     };
     return (
       <div className="carousel">
+      <div className="offset">
+      </div>
+      <h1> Gallery </h1>
         <Slider {...settings}>
           {together.map(image=>{
             return (

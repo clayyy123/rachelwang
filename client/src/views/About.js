@@ -6,14 +6,14 @@ class About extends Component {
   render(){
     return(
       <div className="About">
-      <h1> About Me </h1>
+      <div className="offset">
+      </div>
         <Row>
-          <Col>
+          <Col sm="12" md="6">
           <img id="about-me" src={aboutMe} />
           </Col>
-        </Row>
-        <Row>
-            <Col sm="12"md={{ size: 8, offset: 2 }}>
+          <Col sm="12" md="6">
+          <h1> About Me </h1>
             My main motive to teach yoga is to stay dedicated to the
             students and continually serve them, inspiring them to go
             deeper within. I strive to make this practice both
@@ -24,7 +24,7 @@ class About extends Component {
             movements in Yin and Restorative. I aspire to guide others
             in finding their inner teacher by establishing steadiness and
             ease in body, mind, and breath.
-            </Col>
+          </Col>
         </Row>
       </div>
     )

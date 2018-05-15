@@ -5,8 +5,11 @@ class Classes extends Component{
   render(){
     return(
       <div className="Classes">
+      <div className="offset">
+      </div>
         <h1 id="class">Class Schedule</h1>
         <div id="class-body">
+        
         <Row>
           <Col xs="12" md="4">
             <h2>Doux Yoga</h2><br/>
