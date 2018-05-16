@@ -128,3 +128,7 @@ label:after {
   background-size: cover;
 }
 
+.bg-light{
+  opacity: 0.5;
+}
+
