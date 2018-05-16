@@ -12,7 +12,7 @@ class About extends Component {
           <Col sm="12" md="6">
           <img id="about-me" src={aboutMe} />
           </Col>
-          <Col sm="12" md="6">
+          <Col sm="12" md={{ size: 5}}>
           <h1> About Me </h1>
             My main motive to teach yoga is to stay dedicated to the
             students and continually serve them, inspiring them to go
@@ -26,6 +26,8 @@ class About extends Component {
             ease in body, mind, and breath.
           </Col>
         </Row>
+        <div className="offset">
+        </div>
       </div>
     )
   }

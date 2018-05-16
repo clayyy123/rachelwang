@@ -58,42 +58,41 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <div className="para"></div>
-      <div className="Navbar">
-        <Navbar color="dark" dark expand="md">
-          <NavbarBrand id="navbrand" href="/">Rachel Wang</NavbarBrand>
-          <NavbarToggler onClick={this.toggle.bind(this)} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <Link activeClass="active" className="nav" to="home" spy={true} smooth={true} duration={500} ><NavLink href="#">Home</NavLink></Link>
-              </NavItem>
-              <NavItem>
-                <Link activeClass="active" className="nav" to="about" spy={true} smooth={true} duration={500} ><NavLink href="#">About</NavLink></Link>
-              </NavItem>
-              <NavItem>
-                <Link activeClass="active" className="nav" to="classes" spy={true} smooth={true} duration={500} ><NavLink href="#">Classes</NavLink></Link>
-              </NavItem>
-              <NavItem>
-                <Link activeClass="active" className="nav" to="gallery" spy={true} smooth={true} duration={500} ><NavLink href="#">Gallery</NavLink></Link>
-              </NavItem>
-              <NavItem>
-                <Link activeClass="active" className="nav" to="contact" spy={true} smooth={true} duration={500} ><NavLink href="#">Contact</NavLink></Link>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
-  
-      </div>
+        <div className="Navbar">
+          <Navbar color="light" light expand="md">
+            <NavbarBrand id="navbrand" href="/">Rachel Wang</NavbarBrand>
+            <NavbarToggler onClick={this.toggle.bind(this)} />
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav className="ml-auto" navbar>
+                <NavItem>
+                  <Link activeClass="active" className="nav" to="home" spy={true} smooth={true} duration={500} >Home</Link>
+                </NavItem>
+                <NavItem>
+                  <Link activeClass="active" className="nav" to="about" spy={true} smooth={true} duration={500} >About</Link>
+                </NavItem>
+                <NavItem>
+                  <Link activeClass="active" className="nav" to="classes" spy={true} smooth={true} duration={500} >Classes</Link>
+                </NavItem>
+                <NavItem>
+                  <Link activeClass="active" className="nav" to="gallery" spy={true} smooth={true} duration={500} >Gallery</Link>
+                </NavItem>
+                <NavItem>
+                  <Link activeClass="active" className="nav" to="contact" spy={true} smooth={true} duration={500} >Contact</Link>
+                </NavItem>
+              </Nav>
+            </Collapse>
+          </Navbar>
+    
+        </div>
         
         <Element name="home"><Home /></Element>
-
-        <Element name="about"><About /></Element>
-       
-        <Element name="classes"><Classes /></Element>
-       
-        <Element name="gallery"><Gallery /></Element>
         
+        <Element name="about"><About /></Element>
+        <Home />
+        <Element name="classes"><Classes /></Element>
+        <Home />
+        <Element name="gallery"><Gallery /></Element>
+        <Home />
         <Element name="contact"><Contact /></Element>
         <footer>
           <End />

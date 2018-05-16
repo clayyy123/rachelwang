@@ -27,7 +27,8 @@ class Classes extends Component{
           </Col>
         </Row>
         </div>
-        
+        <div className="offset">
+        </div>
       </div>
     )
   }

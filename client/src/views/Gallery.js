@@ -68,6 +68,8 @@ class Gallery extends Component{
             )
           })}
         </Slider>
+      <div className="offset">
+      </div>
       </div>
           )
   }
