@@ -1,8 +1,8 @@
 .App {
   text-align: center;
   margin: 0;
-    padding: 0;
-    overflow-x: hidden; 
+  padding: 0;
+  overflow-x: hidden; 
 
 }
 
@@ -50,6 +50,16 @@
   -webkit-box-shadow: 0px 0px 45px -5px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 45px -5px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 45px -5px rgba(0,0,0,0.75);
+
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 
@@ -126,9 +136,34 @@ label:after {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  animation:5s slideInFromLeft;
 }
 
 .bg-light{
   opacity: 0.5;
+}
+
+.para2{
+  background-image: url("./parallax.jpg");
+  height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.para3{
+  background-image: url("./parallax1.jpg");
+  height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.para4{
+  background-image: url("./Home.jpg");
+  height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 

@@ -65,19 +65,19 @@ class App extends Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <Link activeClass="active" className="nav" to="home" spy={true} smooth={true} duration={500} >Home</Link>
+                  <Link activeClass="active" className="nav" to="home" spy={true} smooth={true} duration={1000} >Home</Link>
                 </NavItem>
                 <NavItem>
-                  <Link activeClass="active" className="nav" to="about" spy={true} smooth={true} duration={500} >About</Link>
+                  <Link activeClass="active" className="nav" to="about" spy={true} smooth={true} duration={1000} >About</Link>
                 </NavItem>
                 <NavItem>
-                  <Link activeClass="active" className="nav" to="classes" spy={true} smooth={true} duration={500} >Classes</Link>
+                  <Link activeClass="active" className="nav" to="classes" spy={true} smooth={true} duration={1000} >Classes</Link>
                 </NavItem>
                 <NavItem>
-                  <Link activeClass="active" className="nav" to="gallery" spy={true} smooth={true} duration={500} >Gallery</Link>
+                  <Link activeClass="active" className="nav" to="gallery" spy={true} smooth={true} duration={1000} >Gallery</Link>
                 </NavItem>
                 <NavItem>
-                  <Link activeClass="active" className="nav" to="contact" spy={true} smooth={true} duration={500} >Contact</Link>
+                  <Link activeClass="active" className="nav" to="contact" spy={true} smooth={true} duration={1000} >Contact</Link>
                 </NavItem>
               </Nav>
             </Collapse>
@@ -88,11 +88,11 @@ class App extends Component {
         <Element name="home"><Home /></Element>
         
         <Element name="about"><About /></Element>
-        <Home />
+        <div className="para2"></div>
         <Element name="classes"><Classes /></Element>
-        <Home />
+        <div className="para3"></div>
         <Element name="gallery"><Gallery /></Element>
-        <Home />
+        <div className="para4"></div>
         <Element name="contact"><Contact /></Element>
         <footer>
           <End />

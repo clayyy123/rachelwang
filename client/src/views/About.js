@@ -10,7 +10,9 @@ class About extends Component {
       </div>
         <Row>
           <Col sm="12" md="6">
-          <img id="about-me" src={aboutMe} />
+            <div id="about">
+              <img id="about-me" src={aboutMe} />
+            </div>
           </Col>
           <Col sm="12" md={{ size: 5}}>
           <h1> About Me </h1>
