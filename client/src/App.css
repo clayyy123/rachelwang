@@ -65,6 +65,7 @@
 
 .About, .Classes, .carousel{
   height: auto;
+  
 }
 
 .gallery, .image-holder{
@@ -119,16 +120,17 @@ li:hover {
 
 .Contact{
   margin: 0 auto;
-}
-
-label:after {
-  content:"*";
-  color:red;
+  width: 600px;
+  height:7
 }
 
 #text-area{
-  height:300px
+  height:200px;
 }
+
+/* form{
+  height:700px;
+} */
 
 .para{
   background-image: url("./Home.jpg");
@@ -139,13 +141,26 @@ label:after {
   animation:5s slideInFromLeft;
 }
 
+@media only screen and (max-width: 450px) {
+  .para {
+    background-image: url("./Home.jpg");
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    animation:5s slideInFromLeft;
+  }
+}
+
+
+
 .bg-light{
   opacity: 0.5;
 }
 
 .para2{
   background-image: url("./parallax.jpg");
-  height: 400px;
+  height: 700px;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -153,7 +168,7 @@ label:after {
 
 .para3{
   background-image: url("./parallax1.jpg");
-  height: 400px;
+  height: 700px;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -161,9 +176,13 @@ label:after {
 
 .para4{
   background-image: url("./Home.jpg");
-  height: 400px;
+  height: 700px;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+}
+
+.nav:hover{
+  cursor: pointer;
 }
 

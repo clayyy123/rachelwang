@@ -27,25 +27,26 @@ class Contact extends Component {
       <div className="Contact">
       <div className="offset">
       </div>
-        <h1> Contact </h1>
+      
         <Row>
-          <Col sm="12" md={{ size: 6, offset: 3 }}>
+          <Col sm="12" md={{ size: 6, offset: 5 }}>
+          <h1> Contact </h1>
             <Form>
               <FormGroup>
-                <Label for="name">Name</Label>
-                <Input onChange={this.inputHandler.bind(this)} type="name" name="name" id="name" />
+               
+                <Input onChange={this.inputHandler.bind(this)} type="name" name="name" id="name" placeholder="Name"/>
               </FormGroup>
               <FormGroup>
-                <Label for="email">Email</Label>
-                <Input onChange={this.inputHandler.bind(this)} type="email" name="email" id="email" />
+              
+                <Input onChange={this.inputHandler.bind(this)} type="email" name="email" id="email" placeholder="Email"/>
               </FormGroup>
               <FormGroup>
-                <Label for="subject">Subject</Label>
-                <Input onChange={this.inputHandler.bind(this)} type="text" name="subject" id="subject" />
+           
+                <Input onChange={this.inputHandler.bind(this)} type="text" name="subject" id="subject" placeholder="Subject"/>
               </FormGroup>
               <FormGroup>
-                <Label for="text">Message</Label>
-                <Input onChange={this.inputHandler.bind(this)} type="textarea" name="message" id="text-area" />
+      
+                <Input onChange={this.inputHandler.bind(this)} type="textarea" name="message" id="text-area" placeholder="Message"/>
               </FormGroup>
               <Button>Submit</Button>
           </Form>
