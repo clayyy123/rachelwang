@@ -21,6 +21,7 @@ import About from "./views/About"
 import Gallery from "./views/Gallery"
 import End from "./views/Footer"
 import Contact from "./views/Contact"
+import Login from "./views/Login"
 
 class App extends Component {
 
@@ -79,14 +80,15 @@ class App extends Component {
                 <NavItem>
                   <Link activeClass="active" className="nav" to="contact" spy={true} smooth={true} duration={1000} >Contact</Link>
                 </NavItem>
+                <NavItem>
+                  <Link className="nav" href="/blog" target="_blank" >Blog</Link>
+                </NavItem>
               </Nav>
             </Collapse>
           </Navbar>
-    
         </div>
         
         <Element name="home"><Home /></Element>
-        
         <Element name="about"><About /></Element>
         <div className="para2"></div>
         <Element name="classes"><Classes /></Element>
