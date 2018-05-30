@@ -3,13 +3,13 @@ const usersRouter = new express.Router()
 const userCtrl = require("../controllers/users.js")
 const verifyToken = require("../serverAuth.js").verifyToken
 
-usersRouter.post("/new",usersCtrl.create)
+usersRouter.post("/user/new", userCtrl.create)
 
-usersRouter.post("/authenticate", usersCtrl.authenticate)
+usersRouter.post("/authenticate", userCtrl.authenticate)
 
 usersRouter.use(verifyToken)
 
-usersRouter.patch("/update", usersCtrl.update)
+usersRouter.patch("/user/update", userCtrl.update)
 
 module.exports = usersRouter
 
