@@ -7,6 +7,7 @@ blogsRouter.get("/blogs", blogsCtrl.index)
 
 blogsRouter.get("/blogs/:id", blogsCtrl.show)
 
+blogsRouter.use(verifyToken)
 blogsRouter.post("/blog/new", blogsCtrl.create)
 
 blogsRouter.patch("/blogs/update", blogsCtrl.update)

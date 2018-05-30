@@ -14,7 +14,7 @@ import {
   DropdownMenu,
   DropdownItem } from 'reactstrap';
 import './App.css';
-import {Router, Switch} from "react-router-dom"
+import {Router, Switch, Route} from "react-router-dom"
 import Home from "./views/Home"
 import Classes from "./views/Classes"
 import About from "./views/About"
@@ -87,15 +87,27 @@ class App extends Component {
             </Collapse>
           </Navbar>
         </div>
-        
-        <Element name="home"><Home /></Element>
-        <Element name="about"><About /></Element>
-        <div className="para2"></div>
-        <Element name="classes"><Classes /></Element>
-        <div className="para3"></div>
-        <Element name="gallery"><Gallery /></Element>
-        <div className="para4"></div>
-        <Element name="contact"><Contact /></Element>
+        <Switch>
+          <Route path="/login" render={()=>{
+            return <Login />
+          }}/>
+
+          <Route path="/" render={()=>{
+            return (
+              <div>
+              <Element name="home"><Home /></Element>
+              <Element name="about"><About /></Element>
+              <div className="para2"></div>
+              <Element name="classes"><Classes /></Element>
+              <div className="para3"></div>
+              <Element name="gallery"><Gallery /></Element>
+              <div className="para4"></div>
+              <Element name="contact"><Contact /></Element>
+              </div>
+            )
+          }}/>
+       
+        </Switch>
         <footer>
           <End />
         </footer>
