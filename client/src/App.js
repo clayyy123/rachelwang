@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as Scroll from 'react-scroll';
 import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import {Link as Linking} from "react-router-dom"
 import {
   Collapse,
   Navbar,
@@ -22,6 +23,7 @@ import Gallery from "./views/Gallery"
 import End from "./views/Footer"
 import Contact from "./views/Contact"
 import Login from "./views/Login"
+import Blog from "./views/Blog"
 import httpClient from "./httpClient.js"
 
 class App extends Component {
@@ -70,42 +72,61 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="Navbar">
-          <Navbar color="light" light expand="md">
-            <NavbarBrand id="navbrand" href="/">Rachel Wang</NavbarBrand>
-            <NavbarToggler onClick={this.toggle.bind(this)} />
-            <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className="ml-auto" navbar>
-                <NavItem>
-                  <Link activeClass="active" className="nav" to="home" spy={true} smooth={true} duration={1000} >Home</Link>
-                </NavItem>
-                <NavItem>
-                  <Link activeClass="active" className="nav" to="about" spy={true} smooth={true} duration={1000} >About</Link>
-                </NavItem>
-                <NavItem>
-                  <Link activeClass="active" className="nav" to="classes" spy={true} smooth={true} duration={1000} >Classes</Link>
-                </NavItem>
-                <NavItem>
-                  <Link activeClass="active" className="nav" to="gallery" spy={true} smooth={true} duration={1000} >Gallery</Link>
-                </NavItem>
-                <NavItem>
-                  <Link activeClass="active" className="nav" to="contact" spy={true} smooth={true} duration={1000} >Contact</Link>
-                </NavItem>
-                <NavItem>
-                  <Link className="nav" href="/blog" target="_blank" >Blog</Link>
-                </NavItem>
-              </Nav>
-            </Collapse>
-          </Navbar>
-        </div>
         <Switch>
           <Route path="/login" render={(props)=>{
             return <Login {...props} logsuccess={this.onLoginSuccess.bind(this)}/>
           }}/>
 
+          <Route path="/blog" render={(props)=>{
+            return <Blog {...props}/>
+          }}/>
           <Route path="/" render={()=>{
             return (
               <div>
+              <div className="Navbar">
+                <Navbar color="light" light expand="md">
+                  <NavbarBrand id="navbrand" href="/">Rachel Wang</NavbarBrand>
+                  <NavbarToggler onClick={this.toggle.bind(this)} />
+                  <Collapse isOpen={this.state.isOpen} navbar>
+                    <Nav className="ml-auto" navbar>
+                      <NavItem>
+                        <Link activeClass="active" className="nav" to="home" spy={true} smooth={true} duration={1000} >Home</Link>
+                      </NavItem>
+                      <NavItem>
+                        <Link activeClass="active" className="nav" to="about" spy={true} smooth={true} duration={1000} >About</Link>
+                      </NavItem>
+                      <NavItem>
+                        <Link activeClass="active" className="nav" to="classes" spy={true} smooth={true} duration={1000} >Classes</Link>
+                      </NavItem>
+                      <NavItem>
+                        <Link activeClass="active" className="nav" to="gallery" spy={true} smooth={true} duration={1000} >Gallery</Link>
+                      </NavItem>
+                      <NavItem>
+                        <Link activeClass="active" className="nav" to="contact" spy={true} smooth={true} duration={1000} >Contact</Link>
+                      </NavItem>
+                      <NavItem>
+                        <Linking className="nav" to="/blog" target="_blank" >Blog</Linking>
+                      </NavItem>
+                      {this.state.currentUser
+                        ? (
+                          <div>
+                          <NavItem>
+                          <Link className="nav" onClick={this.logOut.bind(this)} >Logout</Link>
+                          </NavItem>
+                          <NavItem>
+                          <Link className="nav">Post Blog</Link>
+                          </NavItem>
+                          </div>
+                          )
+                          :(
+                            <div></div>
+                          )
+                      }
+                    
+                    </Nav>
+                  </Collapse>
+                </Navbar>
+              </div>
               <Element name="home"><Home /></Element>
               <Element name="about"><About /></Element>
               <div className="para2"></div>

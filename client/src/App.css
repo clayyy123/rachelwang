@@ -138,24 +138,7 @@ li:hover {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  animation:5s slideInFromLeft;
-}
-
-@media only screen and (max-width: 450px) {
-  .para {
-    background-image: url("./Home.jpg");
-    height: 500px;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    animation:5s slideInFromLeft;
-  }
-}
-
-
-
-.bg-light{
-  opacity: 0.5;
+  animation: 5s slideInFromLeft;
 }
 
 .para2{
@@ -180,6 +163,33 @@ li:hover {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+}
+
+@media only screen and (max-width: 500px) {
+  .para, .para2, .para3, .para4 {
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+  .para{
+    background-image:url("./vertical/IMG_8809.jpg")
+  }
+  .para2{
+    background-image:url("./vertical/IMG_6957.jpg")
+  }
+  .para3{
+    background-image:url("./vertical/IMG_8773.jpg")
+  }
+  .para4{
+    background-image:url("./vertical/IMG_8919.jpg")
+  }
+}
+
+
+
+.bg-light{
+  opacity: 0.5;
 }
 
 .nav:hover{
