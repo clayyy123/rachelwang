@@ -22,7 +22,7 @@ class Login extends Component {
 		httpClient.logIn(this.state.fields).then(user => {
 			this.setState({ fields: { email: '', password: '' } })
 			if(user) {
-				this.props.onLoginSuccess(user)
+				this.props.logsuccess(user)
 				this.props.history.push('/')
 			}
 		})
@@ -32,7 +32,7 @@ class Login extends Component {
       <div className="Log">
         <div className="offset">
         </div>
-        <Form>
+        <Form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
           <FormGroup>
             <Label for="Login">Log In</Label>
             <Input type="text" name="email" id="login" placeholder="email" />

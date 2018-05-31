@@ -22,6 +22,7 @@ import Gallery from "./views/Gallery"
 import End from "./views/Footer"
 import Contact from "./views/Contact"
 import Login from "./views/Login"
+import httpClient from "./httpClient.js"
 
 class App extends Component {
 
@@ -29,9 +30,19 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state={
-      isOpen: false
+      isOpen: false,
+      currentUser:httpClient.getCurrentUser()
     }
   }
+
+  onLoginSuccess(user) {
+    this.setState({ currentUser: httpClient.getCurrentUser() })
+	}
+
+	logOut() {
+		httpClient.logOut()
+		this.setState({ currentUser: null })
+	}
 
   componentDidMount() {
 
@@ -88,8 +99,8 @@ class App extends Component {
           </Navbar>
         </div>
         <Switch>
-          <Route path="/login" render={()=>{
-            return <Login />
+          <Route path="/login" render={(props)=>{
+            return <Login {...props} logsuccess={this.onLoginSuccess.bind(this)}/>
           }}/>
 
           <Route path="/" render={()=>{

@@ -21,7 +21,7 @@ httpClient.getCurrentUser = function() {
 }
 
 httpClient.logIn = function(credentials) {
-	return this({ method: 'post', url: '/api/users/authenticate', data: credentials })
+	return this({ method: 'post', url: '/authenticate', data: credentials })
 		.then((serverResponse) => {
 			const token = serverResponse.data.token
 			if(token) {
