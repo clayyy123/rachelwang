@@ -16,7 +16,7 @@ class Gallery extends Component{
 
   render() {
     var settings = {
-      dots: false,
+      dots: true,
       infinite: false,
       speed: 500,
       slidesToShow: 4,
@@ -26,7 +26,7 @@ class Gallery extends Component{
       rows: 1,
       responsive: [
         {
-          breakpoint: 1024,
+          breakpoint: 1200,
           settings: {
             slidesToShow: 3,
             slidesToScroll: 3,
@@ -35,11 +35,12 @@ class Gallery extends Component{
           }
         },
         {
-          breakpoint: 600,
+          breakpoint: 900,
           settings: {
             slidesToShow: 2,
             slidesToScroll: 2,
-            initialSlide: 2
+            initialSlide: 2,
+            dots: true
           }
         },
         {
@@ -47,7 +48,8 @@ class Gallery extends Component{
           settings: {
             fade:true,
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            dots: true
           }
         }
       ]
