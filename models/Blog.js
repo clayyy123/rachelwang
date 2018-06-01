@@ -2,8 +2,9 @@ const mongoose = require("mongoose")
 
 const blogSchema = new mongoose.Schema({
   user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
-  body: {type: string},
-  imageURL: {type:string}
+  title: {type: String},
+  body: {type: String},
+  imageURL: {type:String}
 })
 
 const Blog = mongoose.model("Blog", blogSchema)

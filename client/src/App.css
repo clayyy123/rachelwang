@@ -201,3 +201,12 @@ li:hover {
   margin: 0 auto;
 }
 
+.blog-body{
+  white-space: pre-wrap;
+}
+
+.blog-image{
+  width:500px;
+  height:auto;
+}
+

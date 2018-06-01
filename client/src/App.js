@@ -24,7 +24,9 @@ import End from "./views/Footer"
 import Contact from "./views/Contact"
 import Login from "./views/Login"
 import Blog from "./views/Blog"
+import Post from "./views/Post"
 import httpClient from "./httpClient.js"
+
 
 class App extends Component {
 
@@ -73,13 +75,18 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
+          <Route path="/blogs/new" render={(props)=>{
+            return <Post {...props} currentUser={this.state.currentUser}/>
+          }}/>
+
           <Route path="/login" render={(props)=>{
             return <Login {...props} logsuccess={this.onLoginSuccess.bind(this)}/>
           }}/>
 
-          <Route path="/blog" render={(props)=>{
+          <Route path="/blogs" render={(props)=>{
             return <Blog {...props}/>
           }}/>
+
           <Route path="/" render={()=>{
             return (
               <div>
@@ -105,16 +112,16 @@ class App extends Component {
                         <Link activeClass="active" className="nav" to="contact" spy={true} smooth={true} duration={1000} >Contact</Link>
                       </NavItem>
                       <NavItem>
-                        <Linking className="nav" to="/blog" target="_blank" >Blog</Linking>
+                        <Linking className="nav" to="/blogs" target="_blank" >Blog</Linking>
                       </NavItem>
                       {this.state.currentUser
                         ? (
                           <div>
                           <NavItem>
-                          <Link className="nav" onClick={this.logOut.bind(this)} >Logout</Link>
+                          <Link className="nav" to="#" onClick={this.logOut.bind(this)} >Logout</Link>
                           </NavItem>
                           <NavItem>
-                          <Link className="nav">Post Blog</Link>
+                          <Linking className="nav" to="/blogs/new" >Post Blog</Linking>
                           </NavItem>
                           </div>
                           )

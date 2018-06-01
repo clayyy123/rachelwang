@@ -41,4 +41,12 @@ httpClient.logOut = function() {
 }
 
 httpClient.defaults.headers.common.token = httpClient.getToken()
+
+httpClient.postBlog = function(info) {
+	return this({method:"post", url: "/blogs/new", data: info})
+}
+
+httpClient.allPosts = function (){
+	return this({method:"get", url:"/blogs"})
+}
 export default httpClient
