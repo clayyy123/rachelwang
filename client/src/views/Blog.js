@@ -1,9 +1,12 @@
 import React, {Component} from "react"
 import httpClient from "../httpClient.js"
+import { Button, Fade } from 'reactstrap';
 
 class Blog extends Component{
   state={
-    blogposts:[]
+    blogposts:[],
+    show: false,
+    currentBlog:{}
   }
   componentDidMount(){
     httpClient.allPosts().then(serverResponse =>{
@@ -20,16 +23,33 @@ class Blog extends Component{
     }
   }
 
+  toggleHandler(index) {
+    let tmp = this.state.blogposts
+    tmp[index].isActive = !tmp[index].isActive
+    this.setState({
+        
+    });
+}
+
   render(){
     return(
       <div className="Blog">
         <h1>Blog </h1>
-        {this.state.blogposts.map(post =>{
+        {this.state.blogposts.map((post, index) =>{
           return (
-            <div>
+            <div key={index}>
               <img className="blog-image" src={`${post.imageURL}`}/>
               <h1 className="blog-title" >{post.title}</h1>
-              <p className="blog-body">{this.filterHandler(post.body)} <span>Read More</span></p>
+              <Button onClick={()=>{this.toggleHandler(index)}} >Read More</Button>
+              {post.isActive
+                ?
+              (
+                <p className="blog-body">{post.body}</p>
+              )
+              :(
+                <p className="blog-body">{this.filterHandler(post.body)}</p>
+              )
+              } 
              
             </div>
           )
