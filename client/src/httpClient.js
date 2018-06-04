@@ -47,6 +47,10 @@ httpClient.postBlog = function(info) {
 }
 
 httpClient.allPosts = function (){
-	return this({method:"get", url:"/blogs"})
+	return this({method:"get", url:"/api/blogs"})
+}
+
+httpClient.editPost = function (){
+	return this({method:"patch", url:"/blogs/update"})
 }
 export default httpClient

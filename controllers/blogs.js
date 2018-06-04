@@ -3,6 +3,7 @@ const Blog = require("../models/Blog.js")
 module.exports = {
   index: (req,res)=>{
     Blog.find({}, (err, allMatches)=>{
+      if (err) return err
       res.json(allMatches)
     })
   },

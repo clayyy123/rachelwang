@@ -3,16 +3,16 @@ const blogsRouter = new express.Router()
 const verifyToken = require("../serverAuth.js").verifyToken
 const blogsCtrl = require("../controllers/blogs.js")
 
-blogsRouter.get("/blogs", blogsCtrl.index)
+blogsRouter.get("/api/blogs", blogsCtrl.index)
 
 blogsRouter.get("/blogs/:id", blogsCtrl.show)
 
-blogsRouter.use(verifyToken)
-blogsRouter.post("/blogs/new", blogsCtrl.create)
 
-blogsRouter.patch("/blogs/update", blogsCtrl.update)
+blogsRouter.use(verifyToken).post("/blogs/new", blogsCtrl.create)
 
-blogsRouter.delete("/blogs/delete", blogsCtrl.destroy)
+blogsRouter.use(verifyToken).patch("/blogs/update", blogsCtrl.update)
+
+blogsRouter.use(verifyToken).delete("/blogs/delete", blogsCtrl.destroy)
 
 
 module.exports = blogsRouter

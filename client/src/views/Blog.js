@@ -5,8 +5,7 @@ import { Button, Fade } from 'reactstrap';
 class Blog extends Component{
   state={
     blogposts:[],
-    show: false,
-    currentBlog:{}
+    show: false
   }
   componentDidMount(){
     httpClient.allPosts().then(serverResponse =>{
@@ -27,9 +26,19 @@ class Blog extends Component{
     let tmp = this.state.blogposts
     tmp[index].isActive = !tmp[index].isActive
     this.setState({
-        
-    });
-}
+
+    })
+  }
+
+  editHandler(){
+    httpClient.editPost().then(serverResponse=>{
+      
+    })
+  }
+
+  deleteHandler(){
+
+  }
 
   render(){
     return(
@@ -39,6 +48,17 @@ class Blog extends Component{
           return (
             <div key={index}>
               <img className="blog-image" src={`${post.imageURL}`}/>
+              {this.props.currentUser.email === "wang@gmail.com"
+                ? 
+                <div>
+                
+                  <span>Edit</span><span>Delete</span>
+                
+                </div>
+                :(
+                  <div></div>
+                )
+              }
               <h1 className="blog-title" >{post.title}</h1>
               <Button onClick={()=>{this.toggleHandler(index)}} >Read More</Button>
               {post.isActive

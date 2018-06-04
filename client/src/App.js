@@ -84,7 +84,7 @@ class App extends Component {
           }}/>
 
           <Route path="/blogs" render={(props)=>{
-            return <Blog {...props}/>
+            return <Blog currentUser={this.state.currentUser} {...props}/>
           }}/>
 
           <Route path="/" render={()=>{
