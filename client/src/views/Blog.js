@@ -32,12 +32,17 @@ class Blog extends Component{
 
   editHandler(){
     httpClient.editPost().then(serverResponse=>{
-      
+
     })
   }
 
-  deleteHandler(){
-
+  deleteHandler(id){
+    httpClient.deletePost(id).then(serverResponse=>{
+      console.log(serverResponse)
+      this.setState({
+        blogposts: this.state.blogposts.filter(post => post._id !== serverResponse.data.blog._id)
+      })
+    })
   }
 
   render(){
@@ -48,11 +53,11 @@ class Blog extends Component{
           return (
             <div key={index}>
               <img className="blog-image" src={`${post.imageURL}`}/>
-              {this.props.currentUser.email === "wang@gmail.com"
+              {this.props.currentUser
                 ? 
                 <div>
                 
-                  <span>Edit</span><span>Delete</span>
+                  <span className="edit-delete">Edit</span><span onClick={()=>{this.deleteHandler(post._id)}} className="edit-delete">Delete</span>
                 
                 </div>
                 :(

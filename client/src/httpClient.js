@@ -53,4 +53,8 @@ httpClient.allPosts = function (){
 httpClient.editPost = function (){
 	return this({method:"patch", url:"/blogs/update"})
 }
+
+httpClient.deletePost = function (id) {
+	return this({method:"delete", url: `/blogs/delete/${id}`})
+}
 export default httpClient

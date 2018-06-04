@@ -10,9 +10,9 @@ blogsRouter.get("/blogs/:id", blogsCtrl.show)
 
 blogsRouter.use(verifyToken).post("/blogs/new", blogsCtrl.create)
 
-blogsRouter.use(verifyToken).patch("/blogs/update", blogsCtrl.update)
+blogsRouter.use(verifyToken).patch("/blogs/update/:id", blogsCtrl.update)
 
-blogsRouter.use(verifyToken).delete("/blogs/delete", blogsCtrl.destroy)
+blogsRouter.use(verifyToken).delete("/blogs/delete/:id", blogsCtrl.destroy)
 
 
 module.exports = blogsRouter
