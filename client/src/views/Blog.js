@@ -30,11 +30,6 @@ class Blog extends Component{
     })
   }
 
-  editHandler(){
-    httpClient.editPost().then(serverResponse=>{
-
-    })
-  }
 
   deleteHandler(id){
     httpClient.deletePost(id).then(serverResponse=>{
