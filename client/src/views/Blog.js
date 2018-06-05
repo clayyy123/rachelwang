@@ -1,11 +1,13 @@
 import React, {Component} from "react"
 import httpClient from "../httpClient.js"
+import Edit from "./EditBlog.js"
 import { Button, Fade } from 'reactstrap';
+import {Router, Switch, Route, Link} from "react-router-dom"
 
 class Blog extends Component{
   state={
     blogposts:[],
-    show: false
+    selectedBlog:{}
   }
   componentDidMount(){
     httpClient.allPosts().then(serverResponse =>{
@@ -30,6 +32,14 @@ class Blog extends Component{
     })
   }
 
+  selectHandler(id){
+    httpClient.datPost(id).then(serverResponse=>{
+      this.setState({
+        selectedBlog:serverResponse.data
+      })  
+    })
+  }
+
 
   deleteHandler(id){
     httpClient.deletePost(id).then(serverResponse=>{
@@ -43,37 +53,48 @@ class Blog extends Component{
   render(){
     return(
       <div className="Blog">
-        <h1>Blog </h1>
-        {this.state.blogposts.map((post, index) =>{
+      <Switch>
+        <Route path="/blogs/edit" render={()=>{
+          return <Edit currentUser={this.props.currentUser} blog={this.state.selectedBlog}/>
+        }}/>
+        <Route path="/blogs" render={()=>{
           return (
-            <div key={index}>
-              <img className="blog-image" src={`${post.imageURL}`}/>
-              {this.props.currentUser
-                ? 
-                <div>
-                
-                  <span className="edit-delete">Edit</span><span onClick={()=>{this.deleteHandler(post._id)}} className="edit-delete">Delete</span>
+            <div>
+            <h1>Blog </h1>
+            {this.state.blogposts.map((post, index) =>{
+              return (
+                <div key={index}>
+                  <img className="blog-image" src={`${post.imageURL}`}/>
+                  {this.props.currentUser
+                    ? 
+                    <div>
+                    
+                      <Link to="/blogs/edit"><span onMouseOver={()=>{this.selectHandler(post._id)}}className="edit-delete">Edit</span></Link><span onClick={()=>{this.deleteHandler(post._id)}} className="edit-delete">Delete</span>
+                    
+                    </div>
+                    :(
+                      <div></div>
+                    )
+                  }
+                  <h1 className="blog-title" >{post.title}</h1>
+                  <Button onClick={()=>{this.toggleHandler(index)}} >Read More</Button>
+                  {post.isActive
+                    ?
+                  (
+                    <p className="blog-body">{post.body}</p>
+                  )
+                  :(
+                    <p className="blog-body">{this.filterHandler(post.body)}</p>
+                  )
+                  } 
                 
                 </div>
-                :(
-                  <div></div>
-                )
-              }
-              <h1 className="blog-title" >{post.title}</h1>
-              <Button onClick={()=>{this.toggleHandler(index)}} >Read More</Button>
-              {post.isActive
-                ?
-              (
-                <p className="blog-body">{post.body}</p>
               )
-              :(
-                <p className="blog-body">{this.filterHandler(post.body)}</p>
-              )
-              } 
-             
-            </div>
-          )
-        })}
+            })}
+          </div>
+          )}}/>
+
+      </Switch>
       </div>
     )
   }

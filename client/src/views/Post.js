@@ -47,7 +47,7 @@ class Post extends Component{
         </Form>
       )
       :(
-        <h1>No Logged In </h1>
+        <h1>Not Logged In </h1>
       )
     }
         

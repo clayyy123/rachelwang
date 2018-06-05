@@ -54,6 +54,10 @@ httpClient.editPost = function (){
 	return this({method:"patch", url:"/blogs/update"})
 }
 
+httpClient.datPost = function(id){
+	return this({method:"get", url: `/blogs/${id}`})
+}
+
 httpClient.deletePost = function (id) {
 	return this({method:"delete", url: `/blogs/delete/${id}`})
 }
