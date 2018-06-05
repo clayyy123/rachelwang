@@ -1,10 +1,11 @@
 import React, {Component} from "react"
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import httpClient from "../httpClient.js"
 
 class Edit extends Component{
 
   state = {
-		fields: { title:"",body: "", imageURL: ""}
+		fields: {_id:"", title:"",body: "", imageURL: "", isActive:false}
 	}
 
 	onInputChange(evt) {
@@ -19,9 +20,22 @@ class Edit extends Component{
   componentDidMount(){
     console.log(this.props.blog)
     this.setState({
-      fields:{title:this.props.blog.title, body:this.props.blog.body,imageURL:this.props.blog.imageURL }
+      fields:{_id:this.props.blog._id, title:this.props.blog.title, body:this.props.blog.body,imageURL:this.props.blog.imageURL }
     })
   }
+
+  handleSubmit(evt){
+    evt.preventDefault()
+   
+    httpClient.editPost(this.state.fields).then((serverResponse)=>{
+      if(serverResponse){
+        this.props.history.push('/blogs')
+      }
+    })
+  }
+  
+
+  
 
    render(){
     return(
@@ -30,7 +44,7 @@ class Edit extends Component{
       (
         <div>
           <h1> Edit </h1>
-        <Form onChange={this.onInputChange.bind(this)}>
+        <Form onChange={this.onInputChange.bind(this)} onSubmit={this.handleSubmit.bind(this)} >
           <FormGroup>
             <Label for="post">Title</Label>
             <Input type="text" name="title" id="title" value={this.state.fields.title} />

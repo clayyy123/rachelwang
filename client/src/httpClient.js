@@ -50,13 +50,14 @@ httpClient.allPosts = function (){
 	return this({method:"get", url:"/api/blogs"})
 }
 
-httpClient.editPost = function (){
-	return this({method:"patch", url:"/blogs/update"})
+httpClient.editPost = function (id){
+	return this({method:"patch", url:`/blogs/update/${id}`})
 }
 
 httpClient.datPost = function(id){
 	return this({method:"get", url: `/blogs/${id}`})
 }
+
 
 httpClient.deletePost = function (id) {
 	return this({method:"delete", url: `/blogs/delete/${id}`})
