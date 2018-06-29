@@ -37,7 +37,7 @@ class Post extends Component{
           </FormGroup>
           <FormGroup>
             <Label for="body">Body</Label>
-            <Input type="textarea" name="body" id="body" placeholder="Blog Body" />
+            <Input type="textarea" name="body" id="textAreaBody" placeholder="Blog Body" />
           </FormGroup>
           <FormGroup>
             <Label for="examplePassword">Image URL</Label>

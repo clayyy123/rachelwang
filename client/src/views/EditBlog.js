@@ -1,5 +1,6 @@
 import React, {Component} from "react"
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import {Redirect} from "react-router-dom"
 import httpClient from "../httpClient.js"
 
 class Edit extends Component{
@@ -28,8 +29,11 @@ class Edit extends Component{
     evt.preventDefault()
    
     httpClient.editPost(this.state.fields).then((serverResponse)=>{
+      this.setState({
+        fields: {_id:"", title:"",body: "", imageURL: "", isActive:false}
+      })
       if(serverResponse){
-        this.props.history.push('/blogs')
+        this.props.history.push("/blogs")
       }
     })
   }
@@ -40,7 +44,7 @@ class Edit extends Component{
    render(){
     return(
       <div className ="Post">
-      {this.props.currentUser && this.state.fields.title &&
+      {this.props.currentUser.email === "yoga@gmail.com" &&
       (
         <div>
           <h1> Edit </h1>

@@ -1,8 +1,9 @@
-import React, {Component} from "react"
-import httpClient from "../httpClient.js"
-import Edit from "./EditBlog.js"
+import React, {Component} from "react";
+import httpClient from "../httpClient.js";
+import Edit from "./EditBlog.js";
 import { Button, Fade } from 'reactstrap';
-import {Router, Switch, Route, Link} from "react-router-dom"
+import {Router, Switch, Route, Link} from "react-router-dom";
+import Moment from "react-moment";
 
 class Blog extends Component{
   state={
@@ -54,8 +55,8 @@ class Blog extends Component{
     return(
       <div className="Blog">
       <Switch>
-        <Route path="/blogs/edit" render={()=>{
-          return <Edit currentUser={this.props.currentUser} blog={this.state.selectedBlog}/>
+        <Route path="/blogs/edit" render={(props)=>{
+          return <Edit {...props} currentUser={this.props.currentUser} blog={this.state.selectedBlog}/>
         }}/>
         <Route path="/blogs" render={()=>{
           return (
@@ -64,6 +65,7 @@ class Blog extends Component{
             {this.state.blogposts.map((post, index) =>{
               return (
                 <div key={index}>
+                  <h5><Moment format="MMM Do">{post.createdDate}</Moment></h5>
                   <img className="blog-image" src={`${post.imageURL}`}/>
                   {this.props.currentUser
                     ? 
@@ -77,17 +79,23 @@ class Blog extends Component{
                     )
                   }
                   <h1 className="blog-title" >{post.title}</h1>
-                  <Button onClick={()=>{this.toggleHandler(index)}} >Read More</Button>
+                  
                   {post.isActive
                     ?
                   (
+                    <div>
+                    <Button onClick={()=>{this.toggleHandler(index)}} >Read Less</Button>
                     <p className="blog-body">{post.body}</p>
+                    </div>
                   )
                   :(
+                    <div>
+                    <Button onClick={()=>{this.toggleHandler(index)}} >Read More</Button>
                     <p className="blog-body">{this.filterHandler(post.body)}</p>
+                    </div>
                   )
                   } 
-                
+                <hr/>
                 </div>
               )
             })}

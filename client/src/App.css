@@ -203,7 +203,34 @@ li:hover {
 
 .blog-body{
   white-space: pre-wrap;
+  width: 800px;
+  margin: 0 auto;
+  text-align: left;
 }
+
+/* #textAreaBody{
+  width: 800px;
+} */
+
+.Post{
+  width: 800px;
+  margin: 0 auto;
+}
+
+hr {
+  width: 800px;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+@media only screen and (max-width: 800px){
+  .blog-body {
+    width: 100%;
+  }
+}
+
+
 
 .blog-image{
   width:500px;

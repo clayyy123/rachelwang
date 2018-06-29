@@ -34,6 +34,20 @@ httpClient.logIn = function(credentials) {
 		})
 }
 
+httpClient.signUp = function(userInfo) {
+	return this({ method: 'post', url: '/user/new', data: userInfo})
+		.then((serverResponse) => {
+			const token = serverResponse.data.token
+			if(token) {
+				// sets token as an included header for all subsequent api requests
+				this.defaults.headers.common.token = this.setToken(token)
+				return jwtDecode(token)
+			} else {
+				return false
+			}
+		})
+}
+
 httpClient.logOut = function() {
 	localStorage.removeItem('token')
 	delete this.defaults.headers.common.token
@@ -50,8 +64,8 @@ httpClient.allPosts = function (){
 	return this({method:"get", url:"/api/blogs"})
 }
 
-httpClient.editPost = function (id){
-	return this({method:"patch", url:`/blogs/update/${id}`})
+httpClient.editPost = function (info){
+	return this({method:"patch", url:`/blogs/update/${info._id}`, data: info})
 }
 
 httpClient.datPost = function(id){

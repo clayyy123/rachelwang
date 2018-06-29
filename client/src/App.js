@@ -26,7 +26,7 @@ import Login from "./views/Login"
 import Blog from "./views/Blog"
 import Post from "./views/Post"
 import httpClient from "./httpClient.js"
-
+import SignUp from "./views/Signup.js"
 
 class App extends Component {
 
@@ -77,6 +77,10 @@ class App extends Component {
         <Switch>
           <Route path="/blogs/new" render={(props)=>{
             return <Post {...props} currentUser={this.state.currentUser}/>
+          }}/>
+
+          <Route path="/signup" render={(props)=>{
+            return <SignUp {...props} currentUser={this.state.currentUser}/>
           }}/>
 
           <Route path="/login" render={(props)=>{

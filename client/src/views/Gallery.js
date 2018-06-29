@@ -1,6 +1,8 @@
 import React, {Component} from "react"
 import { Container, Row, Col } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Slider from "react-slick";
+import Pop from "./Modal.js"
 
 
 function importAll(r) {
@@ -13,6 +15,18 @@ const together = square.concat(horizontal, vertical)
 
 
 class Gallery extends Component{
+
+  state = {
+    modal: false
+  }
+
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
+
+
 
   render() {
     var settings = {
@@ -62,11 +76,14 @@ class Gallery extends Component{
         <Slider {...settings}>
           {together.map(image=>{
             return (
+            <div>
               <div className="image-holder">
                 <img className="gallery" src={image} />
                 <div className="overlay">
                 </div>
               </div>
+              <Pop image={image}/>
+            </div>
             )
           })}
         </Slider>
