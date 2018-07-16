@@ -65,7 +65,8 @@ class Blog extends Component{
             {this.state.blogposts.map((post, index) =>{
               return (
                 <div key={index}>
-                  <h5><Moment format="MMM Do">{post.createdDate}</Moment></h5>
+                  <h1 className="blog-title" >{post.title}</h1>
+                  <h5><Moment format="MMM Do, YYYY">{post.createdDate}</Moment></h5>
                   <img className="blog-image" src={`${post.imageURL}`}/>
                   {this.props.currentUser
                     ? 
@@ -78,19 +79,19 @@ class Blog extends Component{
                       <div></div>
                     )
                   }
-                  <h1 className="blog-title" >{post.title}</h1>
+                  
                   
                   {post.isActive
                     ?
                   (
-                    <div>
-                    <Button onClick={()=>{this.toggleHandler(index)}} >Read Less</Button>
+                    <div className="blog-body-holder">
+                    <span className="toggle-button" onClick={()=>{this.toggleHandler(index)}}>Read Less</span>
                     <p className="blog-body">{post.body}</p>
                     </div>
                   )
                   :(
-                    <div>
-                    <Button onClick={()=>{this.toggleHandler(index)}} >Read More</Button>
+                    <div className="blog-body-holder">
+                    <span className="toggle-button" onClick={()=>{this.toggleHandler(index)}}>Read More</span>
                     <p className="blog-body">{this.filterHandler(post.body)}</p>
                     </div>
                   )

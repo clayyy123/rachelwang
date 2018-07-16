@@ -74,6 +74,7 @@
   height:auto;
   width:auto;
   z-index: 1;
+  
 }
 
 .image-holder{
@@ -97,8 +98,8 @@
   color: black;
 }
 
-li:hover {
-  color:#00A0C6; 
+li:hover, .toggle-button:hover {
+  color:rgba(128, 128, 128, 0.726); 
 }
 
 .overlay{
@@ -112,6 +113,7 @@ li:hover {
   opacity: 0;
   transition: .5s ease;
   background-color: white;
+
 }
 
 .image-holder:hover .overlay{
@@ -192,7 +194,7 @@ li:hover {
   opacity: 0.5;
 }
 
-.nav:hover{
+.nav:hover, .toggle-button:hover{
   cursor: pointer;
 }
 
@@ -230,10 +232,36 @@ hr {
   }
 }
 
+@media only screen and (max-width: 480px){
+  .gallery ,.image-holder, .overlay{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .overlay{
+    z-index: -10;
+  }
+}
+
 
 
 .blog-image{
-  width:500px;
+  width:900px;
   height:auto;
+  z-index: -20;
 }
+
+.blog-body-holder{
+  margin: auto 0;
+  
+}
+
+.toggle-button{
+  position: relative;
+}
+.popUp{
+  height:500px;
+  width:auto;
+}
+
+
 

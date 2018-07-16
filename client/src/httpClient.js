@@ -76,4 +76,8 @@ httpClient.datPost = function(id){
 httpClient.deletePost = function (id) {
 	return this({method:"delete", url: `/blogs/delete/${id}`})
 }
+
+httpClient.sendEmail = function (info) {
+	return this({method: "post", url:'/contact' , data:info})
+}
 export default httpClient

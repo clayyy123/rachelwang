@@ -49,7 +49,7 @@ class Gallery extends Component{
           }
         },
         {
-          breakpoint: 900,
+          breakpoint: 1000,
           settings: {
             slidesToShow: 2,
             slidesToScroll: 2,
@@ -80,9 +80,10 @@ class Gallery extends Component{
               <div className="image-holder">
                 <img className="gallery" src={image} />
                 <div className="overlay">
+                <Pop image={image}/>
                 </div>
+                
               </div>
-              <Pop image={image}/>
             </div>
             )
           })}

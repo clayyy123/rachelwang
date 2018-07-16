@@ -15,11 +15,11 @@ class Pop extends Component{
   render(){
     return(
       <div className="Pop">
-      <Button color="danger" onClick={this.toggle.bind(this)}>launch</Button>
+      <div className="overlay" onClick={this.toggle.bind(this)}></div>
       <Modal isOpen={this.state.modal} toggle={this.toggle.bind(this)}>
-        <ModalBody>
-          <img className="gallery" src={this.props.image}/>
-        </ModalBody>
+        
+          <img className="popUp" src={this.props.image}/>
+        
       </Modal>
       </div>
     )
