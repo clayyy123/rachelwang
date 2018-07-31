@@ -2,7 +2,7 @@ const Blog = require("../models/Blog.js")
 
 module.exports = {
   index: (req,res)=>{
-    Blog.find({}, (err, allMatches)=>{
+    Blog.find({}).sort({createdDate: -1}).exec((err, allMatches)=>{ 
       if (err) return err
       res.json(allMatches)
     })

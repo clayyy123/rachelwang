@@ -83,11 +83,13 @@
 
 
 .Footer{
-  height:150px;
-  background-color: grey;
-  position: relative;
-  bottom: 0;
+  height:200px;
+  background-color:white;
+  position:relative;
+  bottom:0;
+  left:0;
   width: 100%;
+  border-top: solid 1px rgba(0, 0, 0, 0.308);
   
 }
 
@@ -123,11 +125,15 @@ li:hover, .toggle-button:hover {
 .Contact{
   margin: 0 auto;
   width: 600px;
-  height:7
+  /* height:7 */
 }
 
 #text-area{
   height:200px;
+}
+
+#textAreaBody {
+  height:300px;
 }
 
 /* form{
@@ -194,7 +200,7 @@ li:hover, .toggle-button:hover {
   opacity: 0.5;
 }
 
-.nav:hover, .toggle-button:hover{
+.nav:hover, .toggle-button:hover, .overlay{
   cursor: pointer;
 }
 
@@ -210,9 +216,11 @@ li:hover, .toggle-button:hover {
   text-align: left;
 }
 
-/* #textAreaBody{
+.blog-title {
   width: 800px;
-} */
+  margin: 0 auto;
+}
+
 
 .Post{
   width: 800px;
@@ -249,6 +257,16 @@ hr {
   height:auto;
   z-index: -20;
 }
+@media only screen and (max-width: 480px){
+  .blog-image{
+    width:95%;
+    height:auto;
+    z-index: -20;
+  }
+  .Contact {
+    width: 350px;
+  }
+}
 
 .blog-body-holder{
   margin: auto 0;
@@ -258,9 +276,41 @@ hr {
 .toggle-button{
   position: relative;
 }
+
 .popUp{
-  height:500px;
-  width:auto;
+  height: auto;
+  width: 500px;
+}
+
+.blog-header {
+  background-color: peachpuff;
+  height: 300px;
+  width: 100%;
+}
+
+.blog-name{
+  padding-top:100px;
+  font-family: 'Indie Flower', cursive;
+}
+
+.lead {
+  font-family: 'Indie Flower', cursive;
+}
+
+.blog-title, .toggle-button{
+  font-family: 'Patrick Hand SC', cursive;
+}
+
+.blog-body{
+  font-family: 'Merriweather', serif;
+}
+
+
+
+#date{
+  font-family: 'Patrick Hand SC', cursive;
+  font-style:italic;
+  font-size: 15px; 
 }
 
 
