@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "",
   "license": "ISC",
@@ -20,5 +22,9 @@
     "nodemailer": "^4.6.7",
     "nodemon": "^1.17.5",
     "npm": "^6.0.1"
+  },
+  "devDependencies": {
+    "homepage": "https://clayyy123.github.io/rachelwang/",
+    "gh-pages": "^1.2.0"
   }
 }
