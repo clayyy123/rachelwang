@@ -28,6 +28,10 @@
   text-decoration: none !important ;
 }
 
+#coming-soon-font {
+  font-family: 'Patrick Hand SC', cursive;
+}
+
 #navbrand {
   font-size: 35px;
 }
