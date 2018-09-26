@@ -14,6 +14,20 @@
   font-family: 'News Cycle', sans-serif;
 }
 
+#blog-link {
+  text-decoration: none !important;
+  color: black;
+}
+
+#blog-link:visited {
+  text-decoration: none;
+}
+
+#blog-link:hover {
+  opacity: 0.5;
+  text-decoration: none !important ;
+}
+
 #navbrand {
   font-size: 35px;
 }
@@ -26,6 +40,10 @@
 
 .nav {
   margin-right: 50px;
+}
+
+.nav:hover {
+  text-decoration: underline !important;
 }
 
 .offset {
