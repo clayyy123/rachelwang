@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://clayyy123.github.io/rachelwang/",
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.1.1",
@@ -20,16 +21,15 @@
     "reactstrap": "^6.0.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "proxy": "http://localhost:3001",
   "devDependencies": {
-    "homepage": "https://clayyy123.github.io/rachelwang/",
     "gh-pages": "^1.2.0"
   }
 }
