@@ -23,7 +23,7 @@ class About extends Component {
             Vinyasa); I also appreciate exploring slower-paced movements in Yin
             and Restorative. I aspire to guide others in finding their inner
             teacher by establishing steadiness and ease in body, mind, and
-            breath.
+            breath. fixed
           </Col>
         </Row>
         <div className="offset" />
