@@ -6,17 +6,26 @@ class End extends Component {
       <div className="Footer">
         <ul>&copy; 2018 Rachel Wang Yoga</ul>
         <ul>
-          <a target="_blank" href="https://www.facebook.com/rachelywangyoga/">
-            <li class="fab fa-facebook" />
+          <a
+            target="_blank"
+            href="https://www.facebook.com/rachelywangyoga/"
+            rel="noopener noreferrer"
+          >
+            <li className="fab fa-facebook" />
           </a>
-          <a target="_blank" href="https://www.instagram.com/rachely.wang/">
-            <li class="fab fa-instagram" />
+          <a
+            target="_blank"
+            href="https://www.instagram.com/rachely.wang/"
+            rel="noopener noreferrer"
+          >
+            <li className="fab fa-instagram" />
           </a>
           <a
             target="_blank"
             href="https://www.linkedin.com/in/rachel-wang-04657448/"
+            rel="noopener noreferrer"
           >
-            <li class="fab fa-linkedin" />
+            <li className="fab fa-linkedin" />
           </a>
         </ul>
       </div>

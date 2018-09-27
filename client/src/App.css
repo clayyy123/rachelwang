@@ -202,7 +202,7 @@ li:hover,
   .para,
   .para2,
   .para3,
-  .para4 {
+  .para4:before {
     height: 500px;
     background-attachment: fixed;
     background-position: center;

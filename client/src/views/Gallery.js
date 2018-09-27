@@ -1,32 +1,31 @@
-import React, {Component} from "react"
-import { Container, Row, Col } from 'reactstrap';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import Slider from "react-slick";
-import Pop from "./Modal.js"
-
+import React, { Component } from 'react';
+import Slider from 'react-slick';
+import Pop from './Modal.js';
 
 function importAll(r) {
   return r.keys().map(r);
 }
-const square = importAll(require.context('../square', false, /\.(png|jpe?g|svg)$/));
-const horizontal = importAll(require.context('../horizontal', false, /\.(png|jpe?g|svg)$/));
-const vertical = importAll(require.context('../vertical', false, /\.(png|jpe?g|svg)$/));
-const together = square.concat(horizontal, vertical)
+const square = importAll(
+  require.context('../square', false, /\.(png|jpe?g|svg)$/)
+);
+const horizontal = importAll(
+  require.context('../horizontal', false, /\.(png|jpe?g|svg)$/)
+);
+const vertical = importAll(
+  require.context('../vertical', false, /\.(png|jpe?g|svg)$/)
+);
+const together = square.concat(horizontal, vertical);
 
-
-class Gallery extends Component{
-
+class Gallery extends Component {
   state = {
     modal: false
-  }
+  };
 
   toggle() {
     this.setState({
       modal: !this.state.modal
     });
   }
-
-
 
   render() {
     var settings = {
@@ -60,7 +59,7 @@ class Gallery extends Component{
         {
           breakpoint: 480,
           settings: {
-            fade:true,
+            fade: true,
             slidesToShow: 1,
             slidesToScroll: 1,
             dots: true
@@ -70,33 +69,26 @@ class Gallery extends Component{
     };
     return (
       <div className="carousel">
-      <div className="offset">
-      </div>
-      <h1> Gallery </h1>
+        <div className="offset" />
+        <h1> Gallery </h1>
         <Slider {...settings}>
-          {together.map(image=>{
+          {together.map((image, key) => {
             return (
-            <div>
-              <div className="image-holder">
-                <img className="gallery" src={image} />
-                <div className="overlay">
-                <Pop image={image}/>
+              <div key={key}>
+                <div className="image-holder">
+                  <img className="gallery" src={image} alt="yoga pose" />
+                  <div className="overlay">
+                    <Pop image={image} />
+                  </div>
                 </div>
-                
               </div>
-            </div>
-            )
+            );
           })}
         </Slider>
-      <div className="offset">
+        <div className="offset" />
       </div>
-      </div>
-          )
+    );
   }
 }
 
-
-
-
-
-export default Gallery
+export default Gallery;

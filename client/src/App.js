@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
-import * as Scroll from 'react-scroll';
-import {
-  Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller
-} from 'react-scroll';
+import { Link, Element, Events } from 'react-scroll';
 import { Link as Linking } from 'react-router-dom';
 import {
   Collapse,
@@ -15,15 +7,10 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
+  NavItem
 } from 'reactstrap';
 import './App.css';
-import { Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Home from './views/Home';
 import Classes from './views/Classes';
 import About from './views/About';

@@ -1,10 +1,10 @@
-import React, {Component} from "react"
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import React, { Component } from 'react';
+import { Modal } from 'reactstrap';
 
-class Pop extends Component{
+class Pop extends Component {
   state = {
     modal: false
-  }
+  };
 
   toggle() {
     this.setState({
@@ -12,18 +12,16 @@ class Pop extends Component{
     });
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <div className="Pop">
-        <div className="overlay" onClick={this.toggle.bind(this)}></div>
+        <div className="overlay" onClick={this.toggle.bind(this)} />
         <Modal isOpen={this.state.modal} toggle={this.toggle.bind(this)}>
-          
-            <img className="popUp" src={this.props.image} />
-          
+          <img className="popUp" src={this.props.image} alt="yoga pose" />
         </Modal>
       </div>
-    )
+    );
   }
 }
 
-export default Pop
+export default Pop;

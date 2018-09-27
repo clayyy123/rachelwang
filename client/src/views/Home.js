@@ -1,16 +1,9 @@
-import React, {Component} from "react"
-import homeBanner from "../Home.jpg"
+import React, { Component } from 'react';
 
-class Home extends Component{
-
-  render(){
-    return(
-      // <div className="Home">
-      //       <img id="opener" src={homeBanner}/>
-      // </div>
-      <div className="para"></div>
-    )
+class Home extends Component {
+  render() {
+    return <div className="para" />;
   }
 }
 
-export default Home
+export default Home;

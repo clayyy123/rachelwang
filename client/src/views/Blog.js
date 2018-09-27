@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import httpClient from '../httpClient.js';
 import Edit from './EditBlog.js';
-import { Button, Fade } from 'reactstrap';
-import { Router, Switch, Route, Link } from 'react-router-dom';
+import { Button } from 'reactstrap';
+import { Switch, Route, Link } from 'react-router-dom';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Moment from 'react-moment';
 
@@ -129,7 +129,11 @@ class Blog extends Component {
                             {post.createdDate}
                           </Moment>
                         </h5>
-                        <img className="blog-image" src={`${post.imageURL}`} />
+                        <img
+                          className="blog-image"
+                          src={`${post.imageURL}`}
+                          alt="blog"
+                        />
 
                         {this.props.currentUser ? (
                           <div>
