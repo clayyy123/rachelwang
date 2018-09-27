@@ -77,8 +77,8 @@
 
 @media (min-width: 320px) and (max-width: 480px) {
   #about-me {
-    max-height: 375px;
-    max-width: 375px;
+    max-height: 350px;
+    max-width: 350px;
     height: auto;
     width: auto;
   }
@@ -208,26 +208,42 @@ li:hover,
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
-  .para,
-  .para2,
-  .para3,
+  .para:before,
+  .para2:before,
+  .para3:before,
   .para4:before {
+  }
+  .para {
+    background: url('./vertical/IMG_8809.jpg');
     height: 500px;
+    width: 100%;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
   }
-  .para {
-    background-image: url('./vertical/IMG_8809.jpg');
-  }
   .para2 {
-    background-image: url('./vertical/IMG_6957.jpg');
+    background: url('./vertical/IMG_6957.jpg');
+    height: 500px;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
   }
   .para3 {
-    background-image: url('./vertical/IMG_8773.jpg');
+    background: url('./vertical/IMG_8773.jpg');
+    height: 500px;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
   }
   .para4 {
-    background-image: url('./vertical/IMG_8919.jpg');
+    background: url('./vertical/IMG_8919.jpg');
+    height: 500px;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
   }
 }
 
