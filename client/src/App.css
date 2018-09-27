@@ -217,7 +217,7 @@ li:hover,
     background: url('./vertical/IMG_8809.jpg');
     height: 500px;
     width: 100%;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-position: center;
     background-size: cover;
   }
@@ -225,7 +225,7 @@ li:hover,
     background: url('./vertical/IMG_6957.jpg');
     height: 500px;
     width: 100%;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-position: center;
     background-size: cover;
   }
@@ -233,7 +233,7 @@ li:hover,
     background: url('./vertical/IMG_8773.jpg');
     height: 500px;
     width: 100%;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-position: center;
     background-size: cover;
   }
@@ -241,7 +241,7 @@ li:hover,
     background: url('./vertical/IMG_8919.jpg');
     height: 500px;
     width: 100%;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-position: center;
     background-size: cover;
   }
