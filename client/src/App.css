@@ -231,6 +231,27 @@ li:hover,
   }
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  .para,
+  .para2,
+  .para3,
+  .para4:before {
+    height: 700px;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+  .para2 {
+    background-image: url('./square/IMG_7329.jpg');
+  }
+  .para3 {
+    background-image: url('./square/IMG_7370.jpg');
+  }
+  .para4 {
+    background-image: url('./square/IMG_7340.jpg');
+  }
+}
+
 .bg-light {
   opacity: 0.5;
 }
